@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../font/VelaSans-SemiBold.ttf') format('woff2'),
+        url('../font/VelaSans-SemiBold.woff') format('woff'),
+        url('../font/VelaSans-SemiBold.woff2') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
