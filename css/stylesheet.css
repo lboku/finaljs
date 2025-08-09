@@ -7,4 +7,13 @@
     font-style: normal;
     font-display: swap;
 }
-
+@font-face {
+    font-family: 'Fira Sans Condensed';
+    src: url('../font/FiraSansCondensed-Regular.woff') format('woff2'),
+        url('../font/FiraSansCondensed-Regular.svg') format('woff'),
+        url('../font/FiraSansCondensed-Regular.ttf') format('truetype'),
+        url('FiraSansCondensed-Regular.svg#FiraSansCondensed-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

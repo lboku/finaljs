@@ -1,5 +1,5 @@
 let mainDiv= document.getElementById('game')
-
+let gamesLi = document.querySelector('nav ul li:nth-child(2)');
 
 
 
@@ -9,7 +9,7 @@ async function asyncfunction() {
     let response = await fetch(
       "https://www.cheapshark.com/api/1.0/deals?upperPrice=15"
     );
-    console.log(response);
+    
     if (!response.ok) {
       throw new Error("can not fetch data");
     }
@@ -68,17 +68,18 @@ async function asyncfunction() {
       document.body.appendChild(divWrapper);
       mainDiv.appendChild(divWrapper)
     });
-    console.log(data);
+  
 
     let normalPrice = document.createElement("p");
     document.getElementById("name").appendChild(normalPrice);
     normalPrice.textContent = data[0].normalPrice;
   } catch (error) {
-    console.log("rejected");
   }
 }
 asyncfunction();
 
 
-let burger = document.getElementById('game')
-burger
+
+gamesLi.addEventListener('click', function() {
+  mainDiv.classList.toggle('show');
+});
