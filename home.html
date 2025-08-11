@@ -7,19 +7,23 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/stylesheet.css" />
     <link rel="stylesheet" href="./css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="menu-div">
       <img class="logo" src="./image/image 18.svg" alt="" />
     </div>
     <nav>
-        <ul class="ul-style">
-          <li class="li"><a href="home.html">home</a></li>
-          <li class="li">games</a></li>
-          <li class="li">my store</li>
-        </ul>
-      </nav>
-      <div class="game" id="game"></div>
+      <ul class="ul-style">
+        <li class="li"><a href="home.html">home</a></li>
+        <li class="li">games</li>
+        <li class="li">my store</li>
+      </ul>
+    </nav>
+    <div class="game" id="game"></div>
 
     <div>
       <div class="video-wrapper">
@@ -33,7 +37,7 @@
         ></iframe>
       </div>
     </div>
-    <div class="div-about-asseto">
+    <div class="div-about-asseto" id="div-about-asseto">
       <p class="about-corsa">
         Assetto Corsa EVO offers a highly personalized driving experience. Modes
         like Free Practice and Quick Race allow you to hone your skills, while
@@ -46,21 +50,42 @@
         now—take the wheel and make it your own.
       </p>
     </div>
-    
 
-    <div class="assetto-corsa">
-      <img src="./image/Asset-Grigio-Intro-scaled.jpg" alt="" />
+    <div class="assetto-corsa" id="image-assetto">
+      <!-- <img id="image-assetto" src="./image/Asset-Grigio-Intro-scaled.jpg" alt="" /> -->
       <h1 class="assetto-name">ASSETTO CORSA EVO</h1>
       <h2 class="assetto-realism">redefining realism</h2>
-      <p class="assetto-triler">play game trailer</p>
-      <p class="assetto-accordion">
+      <div id="trailer-for-dom" class="trailer-for-dom">
+        <img id="close" src="./image/delete-sign.png" alt="">
+        <iframe
+          class="iframe-for-dom"
+          width="90%"
+          height="80%"
+          src="https://www.youtube.com/embed/kZpAVyWViIc?si=SXyGYYP1byDPml_G"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div id="play-trailer">
+        <p class="assetto-triler">play game trailer</p>
+
+        <img class="play-button" src="./image/play-icon-svg-15.jpg" alt="" />
+      </div>
+      <p class="assetto-accordion" id="assetto-accordion">
         Assetto Corsa EVO redefines realism in racing simulations, building on
         the legacy of one of the most beloved multi-platform driving games ever
-        created. Featuring
+        created. Featuring a stunning selection of vehicles—ranging from classic
+        cars and hypercars to modern prototypes and race cars—EVO celebrates the
+        pinnacle of automotive history. Each car is meticulously crafted with
+        cutting-edge technology, delivering unmatched mechanical, electronic,
+        and aerodynamic accuracy.
       </p>
     </div>
     <div class="about-game-list">
-      <div class="full-game-position">
+      <div class="full-game-position" id="gamesposition">
         <div class="cod-div">
           <iframe
             src="https://www.youtube.com/embed/uUo5gnaYB_w?autoplay=1&mute=1&start=1"
@@ -83,7 +108,7 @@
         </p>
       </div>
 
-      <div class="full-game-position">
+      <div class="full-game-position" id="gamesposition">
         <div class="gt7-div">
           <iframe
             width="560"
@@ -97,7 +122,7 @@
           ></iframe>
         </div>
         <p class="gt7-name">Gran Turismo® 7</p>
-        <p class="gt7-full">Sony Interactive Entertainment</p>
+        <p class="gt7-full">Sony Interactive</p>
         <p class="about-gt7">
           Whether you’re a competitive or casual racer, collector, tuner, livery
           designer or photographer – find your line with a staggering collection
@@ -106,7 +131,7 @@
         </p>
       </div>
 
-      <div class="full-game-position">
+      <div class="full-game-position" id="gamesposition1">
         <div class="cod-div">
           <iframe
             width="560"
@@ -129,7 +154,7 @@
         </p>
       </div>
 
-      <div class="full-game-position">
+      <div class="full-game-position" id="gamesposition2">
         <div class="gt7-div">
           <iframe
             width="560"
@@ -151,8 +176,10 @@
           and more!
         </p>
       </div>
-    </div> 
-    
+    </div>
+
+    <div class="footer"></div>
+
     <script src="./script.js"></script>
   </body>
 </html>
