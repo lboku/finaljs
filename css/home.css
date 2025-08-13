@@ -17,7 +17,7 @@
   position: fixed;
   margin-top: 3%;
   padding: 1%;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0, 0.7);
   font-family: "Fira Sans Condensed";
   width: 100%;
   display: flex;
@@ -25,7 +25,7 @@
   align-items: center;
   color: white;
   font-size: 26px;
-  opacity: 0.7;
+
   z-index: 1;
 }
 .li {
@@ -86,7 +86,7 @@
   background-size: 100% auto;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 60%;
+  height: 40vh;
   transition: background-size 2.5s ease;
 }
 
@@ -156,9 +156,10 @@
   transform: translate(-50%, -50%);
 }
 #close {
+  display: block;
   position: absolute;
-  margin-top: 3%;
-  margin-left: 70%;
+  margin-top: 3vh;
+  margin-left: 70vw;
   width: 40px;
   height: 40px;
   z-index: 2;
@@ -293,42 +294,102 @@
 }
 
 .footer {
+  padding: 12vh;
   width: 100%;
   height: 50vh;
   background-color: black;
+  position: sticky;
+  bottom: 0;
+  z-index: -2;
 }
 
+.footerP {
+  color: white;
+  font-family: "Fira Sans Condensed";
+}
+.footerPDiv {
+  display: flex;
+  justify-content: space-around;
+}
+.footer-div-image {
+  margin-top: 10vh;
+  margin-left: 35%;
+  width: 30%;
+  height: 20%;
+}
+.top {
+  margin-left: 49%;
+  margin-top: 10%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: aliceblue;
+}
 /* dom */
+@keyframes appear {
+  from {
+    opacity: 1;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.game {
+
+  position: relative;
+  top: 10%;
+  bottom: 5%;
+  width: 100vw;
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 40px;
+ 
+
+}
+
+
 
 .game-card {
-  width: 15vw;
+  position: relative;
+  width: 20vw;
   height: 400px;
   margin-top: 20px;
-  background-color: azure;
+  background-color:black;
   border-radius: 10%;
-  opacity: 1 !important;
+  
 }
 .imagethumb {
   margin-left: 5%;
   margin-top: 5%;
   border-radius: 10%;
   width: 90%;
-  height: 40%;
+  height: 30%;
 }
 .titleP {
   font-family: "VelaSans";
   font-size: large;
+  color: white;
 }
 .dealRatingP {
   font-size: 27px;
-  font-weight: 00;
+  color: white;
 }
 .priceP {
-  color: rgb(165, 162, 162);
+  color: rgb(207, 201, 201);
   font-size: 40px;
 }
 .salepriceP {
+  color: white;
   font-size: 40px;
+  
 }
 .priceDiv {
   position: relative;
@@ -336,15 +397,19 @@
   justify-content: space-evenly;
 }
 .lineDiv {
-  width: 30%;
+  width: 10vw;
   height: 3px;
   background-color: red;
   position: absolute;
   top: 50%;
-  left: 15%;
+  left: 5%;
   transform: rotate(10deg);
 }
 .contentGameP {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   padding: 5%;
   height: 150px;
@@ -352,7 +417,7 @@
 
 .savingsP {
   position: absolute;
-  top: 80%;
+  top: 88%;
   background-color: black;
   color: white;
   display: inline-block;
@@ -361,36 +426,66 @@
   line-height: 1;
   border-radius: 10%;
 }
-
-.game {
-  display: none;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -10%);
-  width: 70vw;
-  padding: 20px;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  opacity: 0.7;
-  border-radius: 40px;
-  z-index: 1;
-}
-.game.show {
-  display: block;
+.divForplusminus{
+  height: 20px;
+  width: 20px;
   position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.imgPlus{
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  /* background-image: url(../image/add-105.png); */
+}
+.imgPlus.showplus{
+display: none;
+}
+.imgminus{
+  display: none;
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  
+}
+.imgminus.showminus{
+  display: block;
+}
+
+
+
+
+.shop-item{
+  display: none;
+}
+
+#mystore{
+  height: 10px;
+ font-size: 20px;
+  color: orange;
+}
+#mystore.ittt{
+
+display: none;
+}
+
+
+.div-for-store{
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -6%);
-  width: 70vw;
-  display: flex;
-  padding: 20px;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: rgba(0, 0, 0, 0.9); /* შავი ნახევრად გამჭვირვალე */
-  border-radius: 40px;
-  z-index: 2;
-  opacity: 1;
+  transform: translate(-50%,-50%);
+  width: 100vh;
+  height:80vh;
+  background-color: rgb(0, 0, 0, 0.7);
+  display: block;
+  border-radius: 50px;
+  z-index: 3;
+  
 }

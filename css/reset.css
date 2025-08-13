@@ -41,3 +41,66 @@ a {
 #root, #__next {
   isolation: isolate;
 }
+img {
+  display: block;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; /* Firefox-ისთვის */
+  text-rendering: optimizeLegibility;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  border: none;      /* თუ გინდა ფორმ ელემენტებიც არ ჰქონდეთ ნაგულისხმევი */
+  outline: none;     /* მაგრამ ყურადღება! ამის გამო შეიძლება ცუდი აკსესუარობა მიიღო */
+  background: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
