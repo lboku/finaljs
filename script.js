@@ -3,6 +3,7 @@
 let mainDiv = document.getElementById("game");
 let gamesLi = document.querySelector("nav ul li:nth-child(3)");
 let myStorefull = document.getElementById("mystore-div");
+let inerdiv =document.getElementById('iner-store-div')
 let domtrailer = document.getElementById("play-trailer");
 let trailerContainer = document.getElementById("trailer-for-dom");
 let iframe = null;
@@ -205,7 +206,7 @@ async function asyncfunction() {
           shopItem.appendChild(removeBtn);
 
           // append-ში მხოლოდ shopItem
-          myStorefull.appendChild(shopItem);
+          inerdiv.appendChild(shopItem);
           arrayForShop[index] = shopItem;
           isAddedArray[index] = true;
         } else {
@@ -319,6 +320,7 @@ let send =document.getElementById('form-element')
 let formElement = document.getElementById("buy");
 let buyAll =document.getElementById('buy-all')
 
+
 buyAll.addEventListener('click',function(){
   formElement.classList.toggle('show-sector')
 
@@ -377,8 +379,11 @@ if (emailValue === "") {
     }
   }
   if (Object.keys(errors).length === 0){
-    this.submit()
+    this.submit().addEventListener('click',function(){
+      myStorefull.classList.remove('div-for-store-show');
+    })
   }
+  
 });
 let passwordfield =document.getElementById('passwordfield');
 let passwordfield2 =document.getElementById('passwordfield2');
