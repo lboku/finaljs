@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/stylesheet.css" />
   <link rel="stylesheet" href="./css/home.css" />
+  <link rel="stylesheet" href="./css/media.css">
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -24,7 +25,55 @@
      
     </ul>
   </nav>
-  <div class="div-for-store"  id="mystore-div"></div>
+  <div class="div-for-store"  id="mystore-div">
+
+    <div class="buy-all" id="buy-all">
+      <p id="buy-all-button"> buy all </p>
+    </div>
+    <section class="section" id="buy">
+      <h2>რეგისტრაცია</h2>
+      <form action="" id="form-element">
+          <div class="div-size">
+              <input class="input"  type="text" name="username" id="usernamefield" placeholder="your username...">
+              <p class="error-text" id="error-username"></p>
+          </div>
+          <div class="div-size">
+              <input class="input" type="email" name="email" id="emailfield" placeholder="your email...">
+              <p class="error-text" id="error-email"></p>
+          </div>
+              <div class="div-size">
+                  <input class="input" type="password" name="password" id="passwordfield" placeholder="your password...">
+                  <p class="error-text" id="error-password"></p>
+                  <i class="fa-solid fa-eye" id="toggleIcon"></i>
+           
+        
+          </div>
+          
+          <div class="div-size">
+              <input class="input" type="password" name="password2" id="passwordfield2" placeholder="repeat your password...">
+              <p class="error-text" id="error-password2"></p> 
+              <i class="fa-solid fa-eye" id="toggleIcon2"></i>
+          </div>
+          <div class="div-size">
+              <input type="radio" name="gender" id="gendermale" class="genderfield">
+              <label for="gendermale">Male</label>
+            
+              <input type="radio" name="gender" id="genderfemale" class="genderfield">
+              <label for="genderfemale">Female</label>
+            
+              <p class="error-text" id="error-gender"></p>
+            </div>
+            
+          <div class="div-size">
+              <input type="checkbox" name="agree" id="check">
+              <label for="check"> i agree terms and conditions</label>
+              <p class="error-text" id="error-agree"></p>
+          </div>
+          <button id="buy" type="submit">ყიდვა</button>
+      </form>
+  </section>
+  </div>
+</div>
   <div class="game" id="game">
     
   </div>
@@ -39,9 +88,9 @@
   </div>
   <div class="footer-div-image">
     <img class="logo-footer" src="./image/image 18.svg" alt="" />
-  
+    <img class="top" id="top" src="./image/up-arrow.svg" alt="">
   </div>
-  <img class="top" src="./image/up-arrow.svg" alt="">
+  
   </div>
   <script src="./script.js"></script>
 </body>

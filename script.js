@@ -1,3 +1,5 @@
+
+
 let mainDiv = document.getElementById("game");
 let gamesLi = document.querySelector("nav ul li:nth-child(3)");
 let myStorefull = document.getElementById("mystore-div");
@@ -193,7 +195,10 @@ async function asyncfunction() {
           removeBtn.classList.add("removeButton"); // ან წაშლის პატარა იკონი
 
           removeBtn.addEventListener("click", function () {
+            imgPlus.classList.remove('showplus')
+            imgminus.classList.remove('showminus')
             shopItem.remove(); // DOM-იდან წაშლა
+
             arrayForShop[index] = null; // array-ში გასუფთავება
             isAddedArray[index] = false; // სტატუსის განახლება
           });
@@ -235,6 +240,15 @@ async function asyncfunction() {
 }
 
 asyncfunction();
+let topBtn = document.getElementById("top");
+if (topBtn) {
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}
 
 //////////////////////////////////////
 //////////////////////////////////////
@@ -249,7 +263,7 @@ let assettoDiv = document.getElementById("image-assetto");
 
 if (acordion && assettoDiv) {
   acordion.addEventListener("click", function () {
-    assettoDiv.classList.add("show-image");
+    assettoDiv.classList.toggle("show-image");
   });
 }
 
@@ -285,12 +299,189 @@ if (domtrailer && trailerContainer && iframe) {
 }
 
 // scroll to top ღილაკის უსაფრთხოება
-const topBtn = document.querySelector(".top");
-if (topBtn) {
-  topBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
+
+
+
+/////////
+/////////
+/////////
+/////////
+/////////
+if(mainDiv){
+  let closeMystoreDiv = document.getElementById('game')
+closeMystoreDiv.addEventListener('click',function(){
+  if (myStorefull.classList.contains('div-for-store-show')) {
+    myStorefull.classList.remove('div-for-store-show');
+  }
+});
 }
+let send =document.getElementById('form-element')
+let formElement = document.getElementById("buy");
+let buyAll =document.getElementById('buy-all')
+
+buyAll.addEventListener('click',function(){
+  formElement.classList.toggle('show-sector')
+
+});
+send.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let errors = {};
+
+  let userName = document.getElementById("usernamefield").value;
+  if (userName === "") {
+    errors.username = "please enter your name";
+  }
+  let password = document.getElementById("passwordfield").value;
+  if (password === "") {
+    errors.password = "please enter your password";
+  }
+  let password2 = document.getElementById("passwordfield2").value;
+  if (password2 === "") {
+    errors.password2 = "repeat your password";
+  }
+  if (password2 !== password) {
+    errors.password2 = "The passwords you entered do not match.";
+  }
+  let emailValue = document.getElementById("emailfield").value.trim();
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+if (emailValue === "") {
+  errors.email = "please enter your email";
+} else if (!emailPattern.test(emailValue)) {
+  errors.email = "format for email is wrong";
+}
+
+  let gender = false;
+  let radios = this.querySelectorAll(".genderfield");
+  radios.forEach((element) => {
+    if (element.checked) 
+    gender = true;
+  });
+  if (!gender){
+    errors.gender = 'Please indicate gender.'
+  }
+  let agree =document.getElementById('check').checked;
+  if (!agree){
+    errors.agree = 'Please agree to the terms and conditions.'
+  }
+  this.querySelectorAll('.error-text').forEach((element)=>{
+    element.innerHTML=''
+  })
+
+  for (let key in errors){
+    
+    let errorText = document.getElementById('error-' +key)
+    console.log(errorText);
+    if(errorText){
+        errorText.innerText = errors[key]
+    }
+  }
+  if (Object.keys(errors).length === 0){
+    this.submit()
+  }
+});
+let passwordfield =document.getElementById('passwordfield');
+let passwordfield2 =document.getElementById('passwordfield2');
+let toggleIcon =document.getElementById('toggleIcon')
+let toggleIcon2 =document.getElementById('toggleIcon2')
+toggleIcon.addEventListener('click', function(){
+    if(passwordfield.type ==='password'){
+        passwordfield.setAttribute('type', 'text');
+        toggleIcon .classList.remove('fa-eye')
+        toggleIcon.classList.add('fa-eye-slash')
+    }else{
+        passwordfield.setAttribute('type', 'password');
+        toggleIcon .classList.add('fa-eye')
+        toggleIcon.classList.remove('fa-eye-slash')
+    }
+ 
+})
+toggleIcon2.addEventListener('click', function(){
+    if(passwordfield2.type ==='password'){
+        passwordfield2.setAttribute('type', 'text');
+        toggleIcon2 .classList.remove('fa-eye')
+        toggleIcon2.classList.add('fa-eye-slash')
+    }else{
+        passwordfield2.setAttribute('type', 'password');
+        toggleIcon2 .classList.add('fa-eye')
+        toggleIcon2.classList.remove('fa-eye-slash')
+    }
+ 
+})
+let emailField = document.getElementById("emailfield");
+let errorTextEmail = document.getElementById("error-email");
+
+emailField.addEventListener("keyup", function () {
+  let emailValue = emailField.value.trim();
+
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  if (emailValue === "") {
+    errorTextEmail.innerText = "enter your email";
+    errorTextEmail.style.color='red'
+  } else if (emailPattern.test(emailValue)) {
+    errorTextEmail.innerText = "email valid";
+    errorTextEmail.style.color = "green";
+  } else {
+    errorTextEmail.innerText = "email isn't valid";
+    
+  }
+});
+let usernameField = document.getElementById("usernamefield");
+let usernamePattern = /^[A-Za-z0-9_]{3,16}$/;
+usernameField.addEventListener("keyup", function () {
+  let usernameValue = usernameField.value.trim();
+
+  if (!usernamePattern.test(usernameValue)) {
+      document.getElementById("error-username").textContent = 
+          "Username must be 3-16 characters and contain only letters, numbers, or underscores.";
+  } else {
+      document.getElementById("error-username").textContent = "";
+  }
+let passwordField = document.getElementById("passwordfield");
+let confirmPasswordField = document.getElementById("passwordfield2");
+let errorPassword = document.getElementById("error-password");
+let errorPassword2 = document.getElementById("error-password2");
+
+let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+// პაროლის ვალიდაცია
+passwordField.addEventListener("keyup", function () {
+    let passwordValue = passwordField.value.trim();
+
+    if (!passwordPattern.test(passwordValue)) {
+        errorPassword.textContent =
+            "Password must be at least 8 characters, include uppercase, lowercase, number, and special character.";
+        errorPassword.style.color = "red";
+    } else {
+        errorPassword.textContent = "Password valid";
+        errorPassword.style.color = "green";
+    }
+
+    // პაროლების დამთხვევის შემოწმება
+    validateConfirmPassword();
+});
+
+// განმეორებითი პაროლის ვალიდაცია
+confirmPasswordField.addEventListener("keyup", validateConfirmPassword);
+
+function validateConfirmPassword() {
+    let passwordValue = passwordField.value.trim();
+    let confirmValue = confirmPasswordField.value.trim();
+
+    if (confirmValue === "") {
+        errorPassword2.textContent = "";
+        return;
+    }
+
+    if (passwordValue !== confirmValue) {
+        errorPassword2.textContent = "Passwords do not match";
+        errorPassword2.style.color = "red";
+    } else {
+        errorPassword2.textContent = "Passwords match";
+        errorPassword2.style.color = "green";
+    }
+}
+
+
+})

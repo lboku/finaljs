@@ -1,0 +1,130 @@
+@media(min-width: 480px) and (max-width:768px){
+    .div-for-store-show{
+        width: 100%;
+        height: 80%;
+        overflow-y: auto; /* საჭიროების შემთხვევაში ჩაშვებული სკროლი */
+         /* თუ ბარათები გვერდიგვერდ გინდა */
+        flex-wrap: wrap; /* მეორე რიგში გადავიდეს */
+        gap: 10px; /* შუალედი ბარათებს შორის */
+       
+
+    }
+    .video-wrapper{
+        height: 37vh;
+    }
+    .assetto-name{
+        font-size: 26px;
+    }
+    .assetto-realism{
+        font-size: 28px;
+    }
+    .assetto-triler{
+        font-size: 20px;
+    }
+    #play-trailer {
+        width: 170px;
+    }
+    .assetto-accordion{
+        font-weight: 10;
+        font-size: 10px;
+    }
+    .for-response{
+        position: relative;
+        width: 100%;
+    }
+    .cod-name{
+        left: 0;
+        font-size: 25px;
+    }
+    .cod-full{
+        top: 25px;
+        left: 0;
+        font-size: 25px;
+    }
+    .gt7-name{
+        left: 0;
+        font-size: 25px;
+    }
+    .gt7-full{
+        width: 100%;
+        top: 25px;
+        left: 0;
+        font-size: 25px;
+    }
+    .gt7-div{
+        left: 0;
+        width: 100%;
+        height: 150px;
+    }
+    .about-gt7{
+        width: 100%;
+        left: 0;
+        top: 55px;
+    }
+    .cod-div{
+        width: 100%;
+        height: 150px;
+    }
+    .full-game-position{
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+    }
+    .about-cod{
+        top: 55px;
+        left: 0;
+        width: 100%;
+    }
+    .footerPDiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .game-card{
+        width: 280px;
+    }
+    .footer{
+        padding-top: 150px;
+    }
+    .shop-item{
+        width: 280px;
+        
+        
+        height: 400px;
+    }
+   .lineDiv{
+    width: 130px;
+   }
+   .buy-all{
+    
+    z-index: 1;
+   }
+
+}
+@media(min-width: 768px) and (max-width:1024px){
+    .video-wrapper{
+        height: 57vh;
+    }
+    #close {
+        margin-top: -3%;
+        margin-left: 96%;
+        width: 25px;
+        height: 25px;
+    }
+   
+    .priceP{
+        font-size: 30px;
+    }
+    .salepriceP {
+        font-size: 30px;
+    }
+    .div-for-store-show{
+
+        width: 100%;
+        height: 80%;
+    }
+    .shop-item{
+        height: 310px;
+    }
+}
