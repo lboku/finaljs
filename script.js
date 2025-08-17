@@ -1,9 +1,7 @@
-
-
 let mainDiv = document.getElementById("game");
 let gamesLi = document.querySelector("nav ul li:nth-child(3)");
 let myStorefull = document.getElementById("mystore-div");
-let inerdiv =document.getElementById('iner-store-div')
+let inerdiv = document.getElementById("iner-store-div");
 let domtrailer = document.getElementById("play-trailer");
 let trailerContainer = document.getElementById("trailer-for-dom");
 let iframe = null;
@@ -77,62 +75,6 @@ async function asyncfunction() {
       divForplusminus.appendChild(imgPlus);
       divForplusminus.appendChild(imgminus);
 
-      // ინიციალიზაცია index-ზე შესაბამისი სტატუსის
-      // isAddedArray[index] = false;
-
-      // divForplusminus.addEventListener("click", function () {
-      //   imgPlus.classList.toggle("showplus");
-      //   imgminus.classList.toggle("showminus");
-
-      //   if (!isAddedArray[index]) {
-      //     let divForArray = document.createElement("div");
-      //     divForArray.classList.add(`shop-${element.internalName}`);
-      //     divForArray.innerHTML = `
-      //     <img src="${element.thumb}" alt="${element.title}">
-      //     <p>${element.title}</p>
-      //     <p>Rating: ${element.dealRating}</p>
-      //     <p>Savings: ${Math.floor(element.savings)}%</p>
-      //     <p>Normal Price: $${element.normalPrice}</p>
-      //     <p>Sale Price: $${element.salePrice}</p>
-      // `;
-      //     // მაგალითად ტექსტი
-      //     document.body.appendChild(divForArray);
-      //     arrayForShop.push(divForArray);
-      //     console.log(arrayForShop);
-      //     isAddedArray[index] = true;
-      //     arrayForShop[index] = divForArray;
-      //     isAddedArray[index] = true;
-      //   } else {
-      //     let itemToRemove = arrayForShop[index];
-      //     if (itemToRemove) {
-      //       itemToRemove.remove(); // DOM-იდან შლა
-      //       arrayForShop[index] = null; // array-ში გასუფთავება
-      //     }
-      //     isAddedArray[index] = false;
-      //     if (arrayForShop.length > 0) {
-      //       arrayForShop.pop();
-      //     }
-      //     console.log(arrayForShop);
-      //     isAddedArray[index] = false;
-      //     console.log("Removed last item");
-      //   }
-      //   // 1. ვიღებთ კონტეინერს, თუ არსებობს (ან ახალს შევქმნით)
-      //   let myStoreDiv = document.getElementById("mystore");
-      //   if (!myStoreDiv) {
-      //     myStoreDiv = document.createElement("div");
-      //     myStoreDiv.id = "mystore";
-      //     openStoreDiv.appendChild(myStoreDiv);
-      //   }
-
-      //   // 2. ვაყენებთ კონტეინერში ტექსტად length-ის მნიშვნელობას
-      //   myStoreDiv.textContent = arrayForShop.length;
-      //   if (arrayForShop.length !== 0) {
-      //     myStoreDiv.classList.remove("ittt");
-      //   } else {
-      //     myStoreDiv.classList.add("ittt");
-      //   }
-      // });
-
       isAddedArray[index] = false;
 
       divForplusminus.addEventListener("click", function () {
@@ -196,8 +138,8 @@ async function asyncfunction() {
           removeBtn.classList.add("removeButton"); // ან წაშლის პატარა იკონი
 
           removeBtn.addEventListener("click", function () {
-            imgPlus.classList.remove('showplus')
-            imgminus.classList.remove('showminus')
+            imgPlus.classList.remove("showplus");
+            imgminus.classList.remove("showminus");
             shopItem.remove(); // DOM-იდან წაშლა
 
             arrayForShop[index] = null; // array-ში გასუფთავება
@@ -301,29 +243,86 @@ if (domtrailer && trailerContainer && iframe) {
 
 // scroll to top ღილაკის უსაფრთხოება
 
-
-
 /////////
 /////////
 /////////
 /////////
 /////////
-if(mainDiv){
-  let closeMystoreDiv = document.getElementById('game')
-closeMystoreDiv.addEventListener('click',function(){
-  if (myStorefull.classList.contains('div-for-store-show')) {
-    myStorefull.classList.remove('div-for-store-show');
-  }
-});
+if (mainDiv) {
+  let closeMystoreDiv = document.getElementById("game");
+  closeMystoreDiv.addEventListener("click", function () {
+    if (myStorefull.classList.contains("div-for-store-show")) {
+      myStorefull.classList.remove("div-for-store-show");
+    }
+  });
 }
-let send =document.getElementById('form-element')
+let send = document.getElementById("form-element");
 let formElement = document.getElementById("buy");
-let buyAll =document.getElementById('buy-all')
+let buyAll = document.getElementById("buy-all");
 
 
-buyAll.addEventListener('click',function(){
-  formElement.classList.toggle('show-sector')
 
+let cookiesSave=document.getElementById('cookie')
+let acceptBatton =document.getElementById('accept')
+let rejectBatton=document.getElementById('reject')
+
+acceptBatton.addEventListener('click',function(e){
+  e.preventDefault()
+    Cookies.set('',isAddedArray)
+    cookiesSave.classList.add('hidecookies')
+  })
+  rejectBatton.addEventListener('click',function(){
+    Cookies.remove('',isAddedArray)
+    cookiesSave.classList.add('hidecookies')
+  })
+// imgPlus.addEventListener('click',function() {
+//   let cookieValue=document.getElementById('iner-store-div').value
+//   cookies.set(cookieValue)
+// } )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+buyAll.addEventListener("click", function () {
+  formElement.classList.toggle("show-sector");
 });
 send.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -345,74 +344,69 @@ send.addEventListener("submit", function (e) {
     errors.password2 = "The passwords you entered do not match.";
   }
   let emailValue = document.getElementById("emailfield").value.trim();
-const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-if (emailValue === "") {
-  errors.email = "please enter your email";
-} else if (!emailPattern.test(emailValue)) {
-  errors.email = "format for email is wrong";
-}
+  if (emailValue === "") {
+    errors.email = "please enter your email";
+  } else if (!emailPattern.test(emailValue)) {
+    errors.email = "format for email is wrong";
+  }
 
   let gender = false;
   let radios = this.querySelectorAll(".genderfield");
   radios.forEach((element) => {
-    if (element.checked) 
-    gender = true;
+    if (element.checked) gender = true;
   });
-  if (!gender){
-    errors.gender = 'Please indicate gender.'
+  if (!gender) {
+    errors.gender = "Please indicate gender.";
   }
-  let agree =document.getElementById('check').checked;
-  if (!agree){
-    errors.agree = 'Please agree to the terms and conditions.'
+  let agree = document.getElementById("check").checked;
+  if (!agree) {
+    errors.agree = "Please agree to the terms and conditions.";
   }
-  this.querySelectorAll('.error-text').forEach((element)=>{
-    element.innerHTML=''
-  })
+  this.querySelectorAll(".error-text").forEach((element) => {
+    element.innerHTML = "";
+  });
 
-  for (let key in errors){
-    
-    let errorText = document.getElementById('error-' +key)
+  for (let key in errors) {
+    let errorText = document.getElementById("error-" + key);
     console.log(errorText);
-    if(errorText){
-        errorText.innerText = errors[key]
+    if (errorText) {
+      errorText.innerText = errors[key];
     }
   }
-  if (Object.keys(errors).length === 0){
-    this.submit().addEventListener('click',function(){
-      myStorefull.classList.remove('div-for-store-show');
-    })
+  if (Object.keys(errors).length === 0) {
+    this.submit().addEventListener("click", function () {
+      myStorefull.classList.remove("div-for-store-show");
+    });
   }
-  
 });
-let passwordfield =document.getElementById('passwordfield');
-let passwordfield2 =document.getElementById('passwordfield2');
-let toggleIcon =document.getElementById('toggleIcon')
-let toggleIcon2 =document.getElementById('toggleIcon2')
-toggleIcon.addEventListener('click', function(){
-    if(passwordfield.type ==='password'){
-        passwordfield.setAttribute('type', 'text');
-        toggleIcon .classList.remove('fa-eye')
-        toggleIcon.classList.add('fa-eye-slash')
-    }else{
-        passwordfield.setAttribute('type', 'password');
-        toggleIcon .classList.add('fa-eye')
-        toggleIcon.classList.remove('fa-eye-slash')
-    }
- 
-})
-toggleIcon2.addEventListener('click', function(){
-    if(passwordfield2.type ==='password'){
-        passwordfield2.setAttribute('type', 'text');
-        toggleIcon2 .classList.remove('fa-eye')
-        toggleIcon2.classList.add('fa-eye-slash')
-    }else{
-        passwordfield2.setAttribute('type', 'password');
-        toggleIcon2 .classList.add('fa-eye')
-        toggleIcon2.classList.remove('fa-eye-slash')
-    }
- 
-})
+let passwordfield = document.getElementById("passwordfield");
+let passwordfield2 = document.getElementById("passwordfield2");
+let toggleIcon = document.getElementById("toggleIcon");
+let toggleIcon2 = document.getElementById("toggleIcon2");
+toggleIcon.addEventListener("click", function () {
+  if (passwordfield.type === "password") {
+    passwordfield.setAttribute("type", "text");
+    toggleIcon.classList.remove("fa-eye");
+    toggleIcon.classList.add("fa-eye-slash");
+  } else {
+    passwordfield.setAttribute("type", "password");
+    toggleIcon.classList.add("fa-eye");
+    toggleIcon.classList.remove("fa-eye-slash");
+  }
+});
+toggleIcon2.addEventListener("click", function () {
+  if (passwordfield2.type === "password") {
+    passwordfield2.setAttribute("type", "text");
+    toggleIcon2.classList.remove("fa-eye");
+    toggleIcon2.classList.add("fa-eye-slash");
+  } else {
+    passwordfield2.setAttribute("type", "password");
+    toggleIcon2.classList.add("fa-eye");
+    toggleIcon2.classList.remove("fa-eye-slash");
+  }
+});
 let emailField = document.getElementById("emailfield");
 let errorTextEmail = document.getElementById("error-email");
 
@@ -423,13 +417,12 @@ emailField.addEventListener("keyup", function () {
 
   if (emailValue === "") {
     errorTextEmail.innerText = "enter your email";
-    errorTextEmail.style.color='red'
+    errorTextEmail.style.color = "red";
   } else if (emailPattern.test(emailValue)) {
     errorTextEmail.innerText = "email valid";
     errorTextEmail.style.color = "green";
   } else {
     errorTextEmail.innerText = "email isn't valid";
-    
   }
 });
 let usernameField = document.getElementById("usernamefield");
@@ -438,55 +431,54 @@ usernameField.addEventListener("keyup", function () {
   let usernameValue = usernameField.value.trim();
 
   if (!usernamePattern.test(usernameValue)) {
-      document.getElementById("error-username").textContent = 
-          "Username must be 3-16 characters and contain only letters, numbers, or underscores.";
+    document.getElementById("error-username").textContent =
+      "Username must be 3-16 characters and contain only letters, numbers, or underscores.";
   } else {
-      document.getElementById("error-username").textContent = "";
+    document.getElementById("error-username").textContent = "";
   }
-let passwordField = document.getElementById("passwordfield");
-let confirmPasswordField = document.getElementById("passwordfield2");
-let errorPassword = document.getElementById("error-password");
-let errorPassword2 = document.getElementById("error-password2");
+  let passwordField = document.getElementById("passwordfield");
+  let confirmPasswordField = document.getElementById("passwordfield2");
+  let errorPassword = document.getElementById("error-password");
+  let errorPassword2 = document.getElementById("error-password2");
 
-let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+  let passwordPattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
-// პაროლის ვალიდაცია
-passwordField.addEventListener("keyup", function () {
+  // პაროლის ვალიდაცია
+  passwordField.addEventListener("keyup", function () {
     let passwordValue = passwordField.value.trim();
 
     if (!passwordPattern.test(passwordValue)) {
-        errorPassword.textContent =
-            "Password must be at least 8 characters, include uppercase, lowercase, number, and special character.";
-        errorPassword.style.color = "red";
+      errorPassword.textContent =
+        "Password must be at least 8 characters, include uppercase, lowercase, number, and special character.";
+      errorPassword.style.color = "red";
     } else {
-        errorPassword.textContent = "Password valid";
-        errorPassword.style.color = "green";
+      errorPassword.textContent = "Password valid";
+      errorPassword.style.color = "green";
     }
 
     // პაროლების დამთხვევის შემოწმება
     validateConfirmPassword();
-});
+  });
 
-// განმეორებითი პაროლის ვალიდაცია
-confirmPasswordField.addEventListener("keyup", validateConfirmPassword);
+  // განმეორებითი პაროლის ვალიდაცია
+  confirmPasswordField.addEventListener("keyup", validateConfirmPassword);
 
-function validateConfirmPassword() {
+  function validateConfirmPassword() {
     let passwordValue = passwordField.value.trim();
     let confirmValue = confirmPasswordField.value.trim();
 
     if (confirmValue === "") {
-        errorPassword2.textContent = "";
-        return;
+      errorPassword2.textContent = "";
+      return;
     }
 
     if (passwordValue !== confirmValue) {
-        errorPassword2.textContent = "Passwords do not match";
-        errorPassword2.style.color = "red";
+      errorPassword2.textContent = "Passwords do not match";
+      errorPassword2.style.color = "red";
     } else {
-        errorPassword2.textContent = "Passwords match";
-        errorPassword2.style.color = "green";
+      errorPassword2.textContent = "Passwords match";
+      errorPassword2.style.color = "green";
     }
-}
-
-
-})
+  }
+});
