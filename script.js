@@ -10,8 +10,7 @@ if (trailerContainer) {
 }
 
 let arrayForShop = [];
-let isAddedArray = []; // თითოეული divForplusminus-ისთვის ცალკე სტატუსი
-
+let isAddedArray = [];
 async function asyncfunction() {
   try {
     let response = await fetch(
@@ -60,7 +59,6 @@ async function asyncfunction() {
       salePriceP.classList.add("salepriceP");
       salePriceP.textContent = `${element.salePrice}`;
 
-      //აქ ვცდილობ შევქმნა რაოდენობები  აითემების
       let divForplusminus = document.createElement("div");
       divForplusminus.classList.add("divForplusminus");
 
@@ -82,17 +80,14 @@ async function asyncfunction() {
         imgminus.classList.toggle("showminus");
 
         if (!isAddedArray[index]) {
-          // შექმენი ერთი div
           let shopItem = document.createElement("div");
           shopItem.classList.add("shop-item");
 
-          // image
           let img = document.createElement("img");
           img.classList.add("imagethumb");
           img.src = element.thumb;
           shopItem.appendChild(img);
 
-          // content
           let contentDiv = document.createElement("div");
           contentDiv.classList.add("contentGameP");
 
@@ -113,7 +108,6 @@ async function asyncfunction() {
 
           shopItem.appendChild(contentDiv);
 
-          // priceDiv
           let priceDiv = document.createElement("div");
           priceDiv.classList.add("priceDiv");
 
@@ -135,15 +129,15 @@ async function asyncfunction() {
           shopItem.appendChild(priceDiv);
           let removeBtn = document.createElement("img");
           removeBtn.src = "../image/delete.png";
-          removeBtn.classList.add("removeButton"); // ან წაშლის პატარა იკონი
+          removeBtn.classList.add("removeButton");
 
           removeBtn.addEventListener("click", function () {
             imgPlus.classList.remove("showplus");
             imgminus.classList.remove("showminus");
-            shopItem.remove(); // DOM-იდან წაშლა
+            shopItem.remove();
 
-            arrayForShop[index] = null; // array-ში გასუფთავება
-            isAddedArray[index] = false; // სტატუსის განახლება
+            arrayForShop[index] = null;
+            isAddedArray[index] = false;
           });
           shopItem.appendChild(removeBtn);
 
@@ -161,7 +155,6 @@ async function asyncfunction() {
         }
       });
 
-      // აამოქმედე divWrapper-ში ყველა ელემენტი
       divWrapper.appendChild(imagethumb);
       priceDiv.appendChild(priceP);
       priceDiv.appendChild(salePriceP);
@@ -193,14 +186,11 @@ if (topBtn) {
   });
 }
 
-//////////////////////////////////////
-//////////////////////////////////////
-//////////////////////////////////////
 let openStoreDiv = document.getElementById("store-div");
 openStoreDiv.addEventListener("click", function () {
   myStorefull.classList.toggle("div-for-store-show");
 });
-// აქაც დაცვა
+
 let acordion = document.getElementById("assetto-accordion");
 let assettoDiv = document.getElementById("image-assetto");
 
@@ -216,7 +206,6 @@ if (acordion) {
   });
 }
 
-// iframe და ვიდეოს გამორთვის უსაფრთხოება
 if (domtrailer && trailerContainer && iframe) {
   let originalSrc = iframe.getAttribute("src");
 
@@ -241,13 +230,6 @@ if (domtrailer && trailerContainer && iframe) {
   }
 }
 
-// scroll to top ღილაკის უსაფრთხოება
-
-/////////
-/////////
-/////////
-/////////
-/////////
 if (mainDiv) {
   let closeMystoreDiv = document.getElementById("game");
   closeMystoreDiv.addEventListener("click", function () {
@@ -260,66 +242,19 @@ let send = document.getElementById("form-element");
 let formElement = document.getElementById("buy");
 let buyAll = document.getElementById("buy-all");
 
+let cookiesSave = document.getElementById("cookie");
+let acceptBatton = document.getElementById("accept");
+let rejectBatton = document.getElementById("reject");
 
-
-let cookiesSave=document.getElementById('cookie')
-let acceptBatton =document.getElementById('accept')
-let rejectBatton=document.getElementById('reject')
-
-acceptBatton.addEventListener('click',function(e){
-  e.preventDefault()
-    Cookies.set('',isAddedArray)
-    cookiesSave.classList.add('hidecookies')
-  })
-  rejectBatton.addEventListener('click',function(){
-    Cookies.remove('',isAddedArray)
-    cookiesSave.classList.add('hidecookies')
-  })
-// imgPlus.addEventListener('click',function() {
-//   let cookieValue=document.getElementById('iner-store-div').value
-//   cookies.set(cookieValue)
-// } )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+acceptBatton.addEventListener("click", function (e) {
+  e.preventDefault();
+  Cookies.set("", isAddedArray);
+  cookiesSave.classList.add("hidecookies");
+});
+rejectBatton.addEventListener("click", function () {
+  Cookies.remove("", isAddedArray);
+  cookiesSave.classList.add("hidecookies");
+});
 
 buyAll.addEventListener("click", function () {
   formElement.classList.toggle("show-sector");
