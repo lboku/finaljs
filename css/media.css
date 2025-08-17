@@ -1,5 +1,10 @@
 @media (min-width: 320px) and (max-width: 480px) {
+  .buy-all-response{
+    margin-top: 8vh;
+  }
+  
   .div-for-store-show {
+    
     width: 100%;
 
     overflow-y: auto; /* საჭიროების შემთხვევაში ჩაშვებული სკროლი */

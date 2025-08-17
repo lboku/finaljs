@@ -63,11 +63,11 @@ async function asyncfunction() {
       divForplusminus.classList.add("divForplusminus");
 
       let imgPlus = document.createElement("img");
-      imgPlus.src = "image/plus.svg";
+      imgPlus.src = "../image/plus.svg";
       imgPlus.classList.add("imgPlus");
 
       let imgminus = document.createElement("img");
-      imgminus.src = "image/minus.svg";
+      imgminus.src = "../image/minus.svg";
       imgminus.classList.add("imgminus");
 
       divForplusminus.appendChild(imgPlus);
